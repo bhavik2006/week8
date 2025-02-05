@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     for (let i = 0; i < 8; i++) {
-        const dayNumber = 1 + i;
+        const dayNumber = 7 + i;
         const dayDate = new Date(today.getFullYear(), 1, dayNumber);
         const dayElement = document.createElement("div");
         dayElement.classList.add("day-box");
