@@ -1,0 +1,122 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    background: linear-gradient(to bottom, #ffb6c1, #ff69b4);
+    color: white;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.letter-container {
+    position: relative;
+    margin-top: 100px;
+    z-index: 2;
+}
+
+.envelope {
+    cursor: pointer;
+    z-index: 5;
+}
+
+.envelope-img {
+    width: 200px;
+    transition: transform 0.5s ease-in-out;
+}
+
+.letter {
+    font-family: 'Dancing Script', cursive;
+    font-size: 22px;
+    color: #4A2C2A;
+    background: url('7b.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+    width: 80%;
+    max-width: 600px;
+    margin: auto;
+    text-align: center;
+    line-height: 1.6;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.letter p {
+    margin-bottom: 10px;
+}
+
+.letter .sign {
+    text-align: right;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.hidden {
+    display: none;
+}
+
+.letter.open {
+    opacity: 1;
+    animation: heartbeat 2s infinite alternate ease-in-out;
+    box-shadow: 0px 0px 15px rgba(255, 99, 71, 0.6);
+}
+
+/* Petals Effect */
+#petals-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.petal {
+    position: absolute;
+    top: -20px;
+    animation: fall 10s infinite linear;
+    z-index: 5;
+    opacity: 0.8;
+    width: 30px;
+    height: 30px;
+    background-image: url("7pink-petal.png");
+    background-size: cover;
+}
+
+@keyframes fall {
+    0% {
+        top: -20px;
+        opacity: 1;
+    }
+    100% {
+        top: 100%;
+        opacity: 0;
+    }
+}
+
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@media only screen and (max-width: 600px) {
+    .letter {
+        width: 90%;
+        font-size: 18px;
+        padding: 15px;
+    }
+
+    .petal {
+        width: 15px;
+        height: 15px;
+    }
+
+    .envelope {
+        width: 80%;
+    }
+}

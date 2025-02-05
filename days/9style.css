@@ -1,0 +1,98 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    background: linear-gradient(to bottom, #4e2a1b, #8b4513);
+    color: white;
+    overflow: hidden;
+    margin: 0;
+    position: relative;
+}
+
+.chocolate-wrapper {
+    margin-top: 150px;
+}
+
+#chocolate {
+    width: 150px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+#chocolate.open {
+    transform: scale(1.1);
+    animation: shake 0.3s ease-in-out;
+}
+
+@keyframes shake {
+    0%, 100% { transform: rotate(0); }
+    25% { transform: rotate(-5deg); }
+    50% { transform: rotate(5deg); }
+    75% { transform: rotate(-5deg); }
+}
+
+.message-container {
+    font-family: 'Dancing Script', cursive;
+    font-size: 22px;
+    margin-top: 20px;
+    padding: 20px;
+    background-image: url("9b.png");
+    background-color: #4e2a1b;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+    margin: 20px auto;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    z-index: 2; /* Ensures the message is on top of the video */
+    top: 90%;  /* Positioned in a good spot */
+    left: 50%;
+    transform: translateX(-50%);
+    display: none; /* Hidden by default */
+}
+
+#video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1; /* Ensures video is behind content */
+    display: none; /* Hidden by default */
+}
+
+.chocolate-piece {
+    position: absolute;
+    top: -50px;
+    width: 50px;
+    height: 50px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    0% { transform: translateY(-50px); opacity: 1; }
+    100% { transform: translateY(100vh); opacity: 0; }
+}
+
+@media screen and (max-width: 768px) {
+    .question-container {
+        margin-top: 80px;
+    }
+
+    .question {
+        font-size: 24px;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 8px 16px;
+    }
+
+    .letter {
+        font-size: 18px;
+        width: 90%;
+        max-width: 400px;
+    }
+}

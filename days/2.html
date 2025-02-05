@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💍 Will You Be Mine? 💍</title>
+    <link rel="stylesheet" href="8style.css">
+    <script defer src="8script.js"></script>
+</head>
+<body>
+    <audio id="bg-music" loop>
+        <source src="8music.mp3" type="audio/mpeg">
+    </audio>
+
+    <div id="hearts-container"></div>
+
+    <div class="question-container">
+        <p class="question">❤️ Kya tum mere saath apni zindagi guzarna chahti ho? ❤️</p>
+        <button class="yes-btn" onclick="showYes()">Yes</button>
+        <button class="no-btn" onclick="showNo()">No</button>
+    </div>
+
+    <div class="letter-container hidden">
+        <div class="envelope" onclick="openLetter()">
+        </div>
+        <div class="letter hidden">
+            <p>❤️ My Heart,</p>
+            <p>Har pal tumhare saath guzarna chahta hoon. Tum meri zindagi ka sabse khoobsurat hissa ho. Aaj, main tumse ek baat poochna chahta hoon.</p>
+            <p>💍 Kya tum mere saath apni zindagi guzarna chahti ho? 💍</p>
+            <p class="sign">- Tumhara Bhavik ❤️</p>
+        </div>
+    </div>
+
+    <div class="sorry-message hidden">
+        <p>💔 Sorry, tumne galat jawab diya. 😔</p>
+    </div>
+</body>
+</html>

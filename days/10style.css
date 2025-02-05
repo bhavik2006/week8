@@ -1,0 +1,89 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: #fce4ec;
+}
+
+#bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2; /* Video ko background ke neeche rakhen */
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.teddy {
+    width: 200px;
+    cursor: pointer;
+}
+
+.message-container {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background: url('10b.png'); /* Apni image yaha add karo */
+    background-size: cover;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    min-height: 250px;
+    width: 450px;
+    z-index: 2; /* Message ko upar rakhen */
+}
+
+.message-text {
+    font-size: 26px;
+    font-weight: bold;
+    font-family: 'Dancing Script', cursive;
+    color: #d81b60;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+#falling-teddies-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1; /* Falling teddies ko video ke upar rakhen */
+}
+
+.teddy-piece {
+    position: absolute;
+    top: -50px; /* Start above the screen */
+    width: 50px;
+    height: 50px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: fall 3s linear infinite; /* Slower animation */
+}
+
+@keyframes fall {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+}
+
+@media (max-width: 600px) {
+    .message-container {
+        width: 90%;
+        min-height: 300px;
+    }
+    .message-text {
+        font-size: 22px;
+    }
+}
